@@ -1,0 +1,464 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #fffaf7;
+  --pink: #f5dfe4;
+  --rose: #c98291;
+  --dark: #3d3033;
+  --soft: #ead4d9;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+.screen {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 25px;
+  position: relative;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Floating decorations */
+
+.floating-hearts span {
+  position: fixed;
+  font-size: 24px;
+  color: #dba9b4;
+  opacity: 0.45;
+  z-index: 0;
+  animation: float 5s ease-in-out infinite;
+}
+
+.floating-hearts span:nth-child(1) {
+  top: 15%;
+  left: 10%;
+}
+
+.floating-hearts span:nth-child(2) {
+  top: 25%;
+  right: 12%;
+  animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(3) {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(4) {
+  bottom: 15%;
+  right: 15%;
+  animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(5) {
+  top: 50%;
+  left: 5%;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(8deg);
+  }
+}
+
+/* Typography */
+
+.tiny-label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(55px, 10vw, 100px);
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-size: clamp(45px, 8vw, 80px);
+  margin-bottom: 25px;
+}
+
+h1 em,
+h2 em {
+  color: var(--rose);
+  font-style: italic;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Intro */
+
+.intro {
+  background:
+    radial-gradient(circle at 20% 20%, #f9e7ea 0, transparent 25%),
+    radial-gradient(circle at 80% 80%, #f3e3d9 0, transparent 25%),
+    var(--cream);
+}
+
+.intro > p {
+  margin-bottom: 35px;
+  color: #756569;
+}
+
+/* Buttons */
+
+.main-btn {
+  border: none;
+  background: var(--dark);
+  color: white;
+  padding: 16px 25px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(61, 48, 51, 0.15);
+}
+
+.main-btn span {
+  margin-left: 10px;
+}
+
+.main-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(61, 48, 51, 0.2);
+}
+
+.main-btn.small {
+  margin-top: 25px;
+}
+
+.text-btn {
+  border: none;
+  background: transparent;
+  color: var(--rose);
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 45px;
+  font-size: 15px;
+}
+
+/* Birthday */
+
+.birthday {
+  background:
+    radial-gradient(circle at 10% 20%, #f8e5e8 0, transparent 25%),
+    radial-gradient(circle at 90% 75%, #f5e2d7 0, transparent 28%),
+    var(--cream);
+}
+
+.subtitle {
+  color: #756569;
+  margin-bottom: 30px;
+}
+
+.sticker-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.sticker-row span {
+  background: white;
+  border: 1px solid #eadadd;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 12px;
+  transform: rotate(-2deg);
+}
+
+.sticker-row span:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.sticker-row span:nth-child(3) {
+  transform: rotate(-1deg);
+}
+
+/* Chaos */
+
+.section-page {
+  background: #f8efeb;
+}
+
+.cards {
+  width: min(900px, 100%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin: 20px 0 40px;
+}
+
+.mini-card {
+  background: white;
+  padding: 30px;
+  border-radius: 22px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(90, 65, 70, 0.08);
+}
+
+.mini-card h3 {
+  margin: 12px 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+}
+
+.mini-card p {
+  font-size: 14px;
+  color: #76686b;
+}
+
+.card-icon {
+  font-size: 30px;
+}
+
+.rotate-left {
+  transform: rotate(-1.5deg);
+}
+
+.rotate-right {
+  transform: rotate(1.5deg);
+}
+
+/* Memories */
+
+.memories {
+  background: var(--cream);
+}
+
+.hint {
+  color: #887477;
+  margin-bottom: 35px;
+}
+
+.photo-grid {
+  width: min(850px, 100%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  margin-bottom: 40px;
+}
+
+.polaroid {
+  background: white;
+  padding: 12px 12px 20px;
+  box-shadow: 0 10px 25px rgba(60, 40, 45, 0.12);
+}
+
+.photo {
+  height: 230px;
+  background: #f1e2e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a77d86;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+.polaroid p {
+  font-family: "Playfair Display", serif;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.p1 {
+  transform: rotate(-3deg);
+}
+
+.p2 {
+  transform: rotate(3deg);
+}
+
+.p3 {
+  transform: rotate(2deg);
+}
+
+.p4 {
+  transform: rotate(-2deg);
+}
+
+/* Letter */
+
+.letter-page {
+  background: #f4e5df;
+}
+
+.letter {
+  width: min(700px, 95%);
+  background: #fffdf9;
+  padding: 55px 50px;
+  text-align: left;
+  box-shadow: 0 15px 40px rgba(70, 50, 50, 0.12);
+  position: relative;
+  transform: rotate(-0.5deg);
+}
+
+.letter-tape {
+  position: absolute;
+  width: 110px;
+  height: 30px;
+  background: #e9cdd0;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  opacity: 0.8;
+}
+
+.letter h2 {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.letter p {
+  margin-bottom: 18px;
+  color: #5d5053;
+}
+
+.letter .final-line {
+  color: var(--rose);
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+}
+
+/* Final */
+
+.final-page {
+  background:
+    radial-gradient(circle at center, #f9e8e8 0, transparent 45%),
+    var(--cream);
+}
+
+.final-symbol {
+  font-size: 55px;
+  color: var(--rose);
+  margin-bottom: 20px;
+  animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+}
+
+.final-page h3 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(25px, 5vw, 40px);
+  font-weight: 500;
+  margin-top: 25px;
+}
+
+.final-hearts {
+  color: var(--rose);
+  margin-top: 35px;
+  font-size: 22px;
+}
+
+/* Confetti */
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  font-size: 20px;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+  .screen {
+    padding: 45px 18px;
+  }
+
+  .cards,
+  .photo-grid {
+    grid-template-columns: 1fr;
+    max-width: 430px;
+  }
+
+  .mini-card {
+    padding: 25px;
+  }
+
+  .photo {
+    height: 250px;
+  }
+
+  .letter {
+    padding: 45px 25px;
+  }
+
+  h1 {
+    font-size: 58px;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+}
